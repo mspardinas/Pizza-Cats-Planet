@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Menu</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		.topbox {
+			position: fixed;
+			height: 130px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: black;
+			z-index: 5;
+		}
+		.topboxbottomborder {
+			position: fixed;
+			height: 132px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: #B6422C;
+			z-index: 4;
+		}
+		.navbar {
+			float: right;
+			right: 30px;
+			top: 70px;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			overflow: hidden;		
+			background-color: black;
+			position: fixed;
+			width: 100%;
+			text-align: center;
+			z-index: 6;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 21px;
+		}
+		.navbar li {
+			display: inline;
+		} 
+		.navbar a {
+    		display: inline-block;
+   			color: white;
+   			padding: 12px 35px;
+   			text-decoration: none;
+   			float: right;
+   		}
+		.current {
+			border-bottom: 2px solid white;
+		}
+		li a:hover {
+			border-bottom: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: #762423;
+		}
+		.columns {
+			float: left;
+			width: 33.33%;
+			text-align: center;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.pizzabox {
+			position: absolute;
+			height: 1500px;
+			width: 100%;
+			top: 500px;
+			left: 0;
+			background-color: black;
+			z-index: -1;
+		}
+		.pizzatitle {
+			position: absolute;
+			text-align: center;
+			color: white;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 65px;
+			top: 550px;
+			width: 99%;
+		}
+		.fooditems {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 26px;
+		}
+		.wingsbox {
+			position: absolute;
+			height: 700px;
+			width: 100%;
+			top: 2368px;
+			left: 0;
+			background-color: black;
+			z-index: -1;
+		}
+		.wingstitle {
+			position: absolute;
+			text-align: center;
+			color: white;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 65px;
+			top: 2418px;
+			width: 99%;
+		}
+		.saladbox {
+			position: absolute;
+			height: 700px;
+			width: 100%;
+			top: 3436px;
+			left: 0;
+			background-color: black;
+			z-index: -1;
+		}
+		.saladtitle {
+			position: absolute;
+			text-align: center;
+			color: white;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 65px;
+			top: 3486px;
+			width: 99%;
+		}
+		.sidesbox {
+			position: absolute;
+			height: 1125px;
+			width: 100%;
+			top: 4504px;
+			left: 0;
+			background-color: black;
+			z-index: -1;
+		}
+		.sidestitle {
+			position: absolute;
+			text-align: center;
+			color: white;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 65px;
+			top: 4554px;
+			width: 99%;
+		}
+		.footbox {
+			position: absolute;
+			height: 320px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 5629px;
+			bottom: 0;
+			background-color: black;
+			z-index: 1;
+		}
+		.footboxborder {
+			position: absolute;
+			height: 322px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 5627px;
+			bottom: 0;
+			background-color: #B6422C;
+			z-index: -1;
+		}
+		.footcontent {
+			position: absolute;
+			color: white;
+			top: 5677px;
+			left: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		.copyright {
+			position: absolute;
+			color: #808080;
+			top: 5907px;
+			text-align: center;
+			font-family: Arial, sans-serif;
+			font-size: 13px;
+			z-index: 3;
+			width: 99%;
+		}
+		.suggest {
+			position: absolute;
+			color: white;
+			background: transparent;
+			top: 5677px;
+			right: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		button {
+			position: absolute;
+			right: 4px;
+			border-radius: 2px;
+			color: white;
+			background-color: black;
+			padding: 8px 10px;
+			border-color: #B6422C;
+		}
+		</style>
+	</head>
+	<body>
+		<img style="left: 40px; top: 15px; z-index: 10; position: fixed; width: 13%; color: white;"src="logo/logo.jpeg" alt="PIZZA CAT'S PLANET">
+		<ul align="right" class="navbar">
+			<li><a href="manager.html">ABOUT THE MEOWNAGER</a></li>
+			<li><a href="order.html">ORDER NOW</a></li>
+			<li><a href="menu.html" class="current">MENU</a></li>
+			<li><a href="home.html">HOME</a></li>
+		</ul>
+		<div class="topbox"></div>
+		<div class="topboxbottomborder"></div>
+		<img style="position: absolute; left: 0; top: -100px; width: 100%; z-index: -3;" src="bgimages/pizzabg.jpeg" alt="Pizza background">
+		<div class="pizzabox"></div>
+		<div class="pizzatitle">
+			<p><strong>PIZZA</strong></p>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/cheese.jpeg" alt="Cheese Pizza">
+					<div class="fooditems">
+						Classic Cheese
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/4cheese.jpeg" alt="Four Cheese Pizza">
+					<div class="fooditems">
+						Four Cheese 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/pestocheese.jpeg" alt="Pesto Cheese Pizza">
+					<div class="fooditems">
+						Pesto Cheese
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/pepp.jpeg" alt="Pepperoni Pizza">
+					<div class="fooditems">
+						Pepperoni
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/sausage.jpeg" alt="Sausage Pizza">
+					<div class="fooditems">
+						Sausage 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/beef.jpeg" alt="Beef Pizza">
+					<div class="fooditems">
+						Beef
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/veggie.jpeg" alt="Veggie Pizza">
+					<div class="fooditems">
+						Veggie's Delight
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/king.jpeg" alt="King Pizza">
+					<div class="fooditems">
+						King 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/hawaii.jpeg" alt="Hawaiian Pizza">
+					<div class="fooditems">
+						Hawaiian
+					</div>
+				</div>
+			</div>
+		</div>
+		<img style="position: absolute; left: 0; top: 1650px; width: 100%; z-index: -4;" src="bgimages/chicken.jpeg" alt="Chicken Wings background">
+		<div class="wingsbox"></div>
+		<div class="wingstitle">
+			<p><strong>CHICKEN WINGS</strong></p>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/buffalo.jpeg" alt="Classic Buffalo Wings">
+					<div class="fooditems">
+						Classic Buffalo 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/hotbuffalo.jpeg" alt="Flamin' Buffalo Wings">
+					<div class="fooditems">
+						Flamin' Buffalo
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/superhot.jpeg" alt="Nuclear Buffalo Wings">
+					<div class="fooditems">
+						Nuclear Buffalo
+					</div>
+				</div>
+			</div>
+		</div>
+		<img style="position: absolute; left: 0; top: 2968px; width: 100%; z-index: -4;" src="bgimages/salad.jpeg" alt="Salad background">
+		<div class="saladbox"></div>
+		<div class="saladtitle">
+			<p><strong>SALADS</strong></p>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/saladfood.jpeg" alt="Romaine Salad">
+					<div class="fooditems">
+						Romaine Salad 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/pastasalad.jpeg" alt="Pasta Salad">
+					<div class="fooditems">
+						Pasta Salad
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 60%;" src="food/caesar.jpeg" alt="Caesar Salad">
+					<div class="fooditems">
+						Caesar Salad
+					</div>
+				</div>
+			</div>
+		</div>
+		<img style="position: absolute; left: 0; top: 3900px; width: 100%; z-index: -4;" src="bgimages/sides.jpeg" alt="Sides background">
+		<div class="sidesbox"></div>
+		<div class="sidestitle">
+			<p><strong>SIDES & DESSERTS</strong></p>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/bread.jpeg" alt="Garlic Bread">
+					<div class="fooditems">
+						Garlic Bread
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/soup.jpeg" alt="Sopas">
+					<div class="fooditems">
+						Sopas 
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/macaroni.jpeg" alt="Macaroni with red sauce">
+					<div class="fooditems">
+						Macaroni
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/cinammon.jpeg" alt="Cinnamon Rolls">
+					<div class="fooditems">
+						Cinnamon Rolls
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/apple.jpeg" alt="Apple Crumble Dessert Pizza">
+					<div class="fooditems">
+						Apple Crumble Dessert Pizza
+					</div>
+				</div>
+				<div class="columns">
+					<img style="max-width: 80%;" src="food/fudge.jpeg" alt="Fudge Brownies">
+					<div class="fooditems">
+						Fudge Brownies
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footbox"></div>
+		<div class="footboxborder"></div>
+		<div class="footcontent">
+			<p>CONNECT WITH US AT:</p>
+			<a href="https://www.facebook.com/miguel.pardinas.7?ref=bookmarks"><img style="width: 30px;" src="socialicons/facebook.jpeg" alt="Facebook"></a>
+			&emsp;
+			<a href="mailto:mspardinas@up.edu.ph"><img style="width: 30px;" src="socialicons/google.jpeg" alt="Google mail"></a>
+			<p><i>1-800-HOTLINECAT</i></p>
+		</div>
+		<div class="copyright">
+			Copyright ©2018 Pizza Cat's Planet. All Rights Reserved.
+		</div>
+		<div class="suggest">
+			<label> COMMENTS & SUGGESTIONS: <br><br>
+				<textarea rows="8" cols="75" required style="color: white; background-color: transparent;">TYPE HERE...</textarea>
+			</label>
+			<br><br>
+			<button type="submit">SUBMIT</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Order Form</title>
+		<script type="text/javascript" src="receipt.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		.topbox {
+			position: fixed;
+			height: 130px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: black;
+			z-index: 5;
+		}
+		.topboxbottomborder {
+			position: fixed;
+			height: 132px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: #B6422C;
+			z-index: 4;
+		}
+		.navbar {
+			float: right;
+			right: 30px;
+			top: 70px;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			overflow: hidden;		
+			background-color: black;
+			position: fixed;
+			width: 100%;
+			text-align: center;
+			z-index: 6;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 21px;
+		}
+		.navbar li {
+			display: inline;
+		} 
+		.navbar a {
+    		display: inline-block;
+   			color: white;
+   			padding: 12px 35px;
+   			text-decoration: none;
+   			float: right;
+   		}
+		.current {
+			border-bottom: 2px solid white;
+		}
+		li a:hover {
+			border-bottom: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: #762423;
+		}
+		.orderbox {
+			position: relative;
+			margin: auto;
+			height: 4600px;
+			width: 73%;
+			background-color: black;
+			z-index: -1;
+		}
+		.orderposition {
+			position: absolute;
+			top: 145px;
+			left: 296px;
+			max-width: 69%;
+			z-index: 4px;
+		}
+		.columns {
+			float: left;
+			width: 33.33%;
+			text-align: center;
+		}
+		.columnsreceipt1 {
+			float: left;
+			width: 30%;
+			text-align: left;
+			padding: 10px;
+		}
+		.columnsreceipt2 {
+			float: left;
+			width: 65.5%;
+			text-align: left;
+			padding: 10px;
+		}
+		.columncart {
+			float: left;
+			width: 47%;
+			text-align: left;
+			padding: 10px;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.field {
+			border-color: #B6422C;
+			border-style: solid;
+		}
+		legend {
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 35px;
+			color: white;
+			background-color: black;
+			padding: 15px 16px;
+		}
+		.ordername {
+			color: white;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 25px;
+		}
+		.orderitem {
+			color: white;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 20px;
+			text-align: center;
+			padding-bottom: 25px;
+		}
+		.receipt {
+			color: white;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 20px;
+			text-align: left;
+			padding-bottom: 25px;
+			padding-left: 15px;
+		}
+		.footbox {
+			position: absolute;
+			height: 320px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 4552px;
+			bottom: 0;
+			background-color: black;
+			z-index: 1;
+		}
+		.footboxborder {
+			position: absolute;
+			height: 322px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 4550px;
+			bottom: 0;
+			background-color: #B6422C;
+			z-index: -1;
+		}
+		.footcontent {
+			position: absolute;
+			color: white;
+			top: 4600px;
+			left: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		.copyright {
+			position: absolute;
+			color: #808080;
+			top: 4830px;
+			text-align: center;
+			font-family: Arial, sans-serif;
+			font-size: 13px;
+			z-index: 3;
+			width: 99%;
+		}
+		.suggest {
+			position: absolute;
+			color: white;
+			background: transparent;
+			top: 4600px;
+			right: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		.footerbutton {
+			position: absolute;
+			right: 4px;
+			border-radius: 2px;
+			color: white;
+			background-color: black;
+			padding: 8px 10px;
+			border-color: #B6422C;
+		}
+		.buttonform {
+			border-color: #B6422C;
+			padding: 10px 15px;
+			background-color: black;
+			color: white;
+			border-radius: 2px;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 21px;
+		}
+		.buttonposition {
+			position: relative;
+			text-align: center;
+			width: 99%;
+			padding-top: 45px;
+		}
+		</style>
+	</head>
+	<body background="backdrops/pizzastar.jpeg">
+		<form>
+		<img style="left: 40px; top: 15px; z-index: 10; position: fixed; width: 13%; color: white;"src="logo/logo.jpeg" alt="PIZZA CAT'S PLANET">
+		<ul align="right" class="navbar">
+			<li><a href="manager.html">ABOUT THE MEOWNAGER</a></li>
+			<li><a href="order.html" class="current">ORDER NOW</a></li>
+			<li><a href="menu.html">MENU</a></li>
+			<li><a href="home.html">HOME</a></li>
+		</ul>
+		<div class="topbox"></div>
+		<div class="topboxbottomborder"></div>
+		<div class="orderbox"></div>
+			<div class="orderposition">
+				<fieldset class="field">
+					<legend>SPECIALS</legend>
+					<img style="display: block; margin-left: auto; margin-right: auto; color: white;" src="food/yourpizza.jpeg" alt="YOUR PIZZA HERE">
+					<div class="orderitem">
+						<label>
+							Flavor:
+								<select id="pizzabase" onchange="pizzabasefunc()">
+									<option value="Four Cheese">Four Cheese</option>
+									<option value="Pesto Cheese">Pesto Cheese</option>
+									<option value="King">King</option>
+									<option value="Hawaiian">Hawaiian</option>
+									<option value="Pepperoni">Pepperoni</option>
+								</select>
+						</label>
+						<br><br>
+						Size:
+							<label><input type="radio" name="ownsize" onclick="sizeoption(this.value)" value="Small">Small<br></label>
+							<label><input type="radio" name="ownsize" onclick="sizeoption(this.value)" value="Medium">Medium<br></label>
+							<label><input type="radio" name="ownsize" onclick="sizeoption(this.value)" value="Large">Large<br></label>
+						<br/><br/>
+						Extra toppings:
+							<label><input type="checkbox" name="toppings" value="Bacon">Bacon</label>
+							<label><input type="checkbox" name="toppings" value="Pepperoni">Pepperoni</label>
+							<label><input type="checkbox" name="toppings" value="Beef">Beef</label>
+							<label><input type="checkbox" name="toppings" value="Sausage">Sausage</label>
+							<label><input type="checkbox" name="toppings" value="Cheese">Cheese</label>
+							<label><input type="checkbox" name="toppings" value="Onion">Onions</label>
+							<label><input type="checkbox" name="toppings" value="Mushroom">Mushroom</label>
+							<label><input type="checkbox" name="toppings" value="Bellpeppers">Bellpeppers</label>
+							<label><input type="checkbox" name="toppings" value="Olives">Olives</label>
+							<label><input type="checkbox" name="toppings" value="Pesto">Pesto</label>
+							<br><br>
+							<button onclick="addtoppings()">Confirm toppings</button>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>PIZZA</legend>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/cheese.jpeg" alt="Cheese Pizza">
+							<div class="ordername">
+								Classic Cheese Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="cheesepizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="classiccheese" value="Classic Cheese Pizza" onclick="addpizza1()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/4cheese.jpeg" alt="Four Cheese Pizza">
+							<div class="ordername">
+								Four Cheese Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="4cheesepizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="fourcheese" value="Four Cheese Pizza" onclick="addpizza2()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/pestocheese.jpeg" alt="Pesto Cheese Pizza">
+							<div class="ordername">
+								Pesto Cheese Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="pestocheese">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="pestocheese" value="Pesto Cheese Pizza" onclick="addpizza3()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/pepp.jpeg" alt="Pepperoni Pizza">
+							<div class="ordername">
+								Pepperoni Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="peppapigizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="pepperoni" value="Pepperoni Pizza" onclick="addpizza4()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/sausage.jpeg" alt="Sausage Pizza">
+							<div class="ordername">
+								Sausage Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="sausagepizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="sausage" value="Sausage Pizza" onclick="addpizza5()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/beef.jpeg" alt="Beef Pizza">
+							<div class="ordername">
+								Beef Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="beefpizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="beef" value="Beef Pizza" onclick="addpizza6()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/veggie.jpeg" alt="Veggie Pizza">
+							<div class="ordername">
+								Veggie's Delight Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="veggiepizza">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="veggie" value="Veggie's Delight Pizza" onclick="addpizza7()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/king.jpeg" alt="King Pizza">
+							<div class="ordername">
+								King Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="king">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="king" value="King Pizza" onclick="addpizza8()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/hawaii.jpeg" alt="Hawaiian Pizza">
+							<div class="ordername">
+								Hawaiian Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="hawaiian">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="hawaiian" value="Hawaiian Pizza" onclick="addpizza9()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>CHICKEN WINGS</legend>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/buffalo.jpeg" alt="Classic Buffalo Wings">
+							<div class="ordername">
+								Classic Buffalo Wings
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="classicwingspcs">
+											<option value="6pcs">6 Pieces</option>
+											<option value="8pcs">8 Pieces</option>
+											<option value="12pcs">12 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="classicbuffalo" value="Classic Buffalo Wings" onclick="addwings1()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/hotbuffalo.jpeg" alt="Flamin' Buffalo Wings">
+							<div class="ordername">
+								Flamin' Buffalo Wings
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="flaminwingspcs">
+											<option value="6pcs">6 Pieces</option>
+											<option value="8pcs">8 Pieces</option>
+											<option value="12pcs">12 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="flaminbuffalo" value="Flamin' Buffalo Wings" onclick="addwings2()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/superhot.jpeg" alt="Nuclear Buffalo Wings">
+							<div class="ordername">
+								Nuclear Buffalo Wings
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="nuclearwingspics">
+											<option value="6pcs">6 Pieces</option>
+											<option value="8pcs">8 Pieces</option>
+											<option value="12pcs">12 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="nuclearbuffalo" value="Nuclear Buffalo Wings" onclick="addwings3()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>SALADS</legend>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/saladfood.jpeg" alt="Romaine Salad">
+							<div class="ordername">
+								Romaine Salad
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="saladromaine">
+											<option value="single">Singles</option>
+											<option value="family">Family size</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="romaine" value="Romaine Salad" onclick="addsalad1()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/pastasalad.jpeg" alt="Pasta Salad">
+							<div class="ordername">
+								Pasta Salad
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="saladpasta">
+											<option value="single">Singles</option>
+											<option value="family">Family size</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="pasta" value="Pasta Salad" onclick="addsalad2()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 60%;" src="food/caesar.jpeg" alt="Caesar Salad">
+							<div class="ordername">
+								Caesar Salad
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="caesarsalad">
+											<option value="single">Singles</option>
+											<option value="family">Family size</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="caesar" value="Caesar Salad" onclick="addsalad3()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>SIDES & DESSERTS</legend>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/bread.jpeg" alt="Garlic Bread">
+							<div class="ordername">
+								Garlic Bread
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="sidesbread">
+											<option value="6pcsbread">6 Pieces</option>
+											<option value="12pcsbread">12 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="garlic" value="Garlic Bread" onclick="addside1()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/soup.jpeg" alt="Sopas">
+							<div class="ordername">
+								Sopas
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>Amount: <input type="number" name="sopasamount"></label>
+								<label><input type="checkbox" id="sopas" value="Sopas" onclick="addside2()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/macaroni.jpeg" alt="Macaroni with red sauce">
+							<div class="ordername">
+								Macaroni
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="sidesmac">
+											<option value="single">Singles</option>
+											<option value="family">Family size</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="macaroni" value="Macaroni" onclick="addside3()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/cinammon.jpeg" alt="Cinnamon Rolls">
+							<div class="ordername">
+								Cinnamon Rolls
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="sidesrolls">
+											<option value="6pcs">6 Pieces</option>
+											<option value="8pcs">8 Pieces</option>
+											<option value="12pcs">12 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="cinnamon" value="Cinnamon Rolls" onclick="addsweet1()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/apple.jpeg" alt="Apple Crumble Dessert Pizza">
+							<div class="ordername">
+								Apple Crumble Dessert Pizza
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Size:
+										<select name="sideapple">
+											<option value="small">Small</option>
+											<option value="med">Medium</option>
+											<option value="large">Large</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="apple" value="Apple Crumble Dessert Pizza" onclick="addsweet2()">Add to cart</label>
+							</div>
+						</div>
+						<div class="columns">
+							<img style="max-width: 80%;" src="food/fudge.jpeg" alt="Fudge Brownies">
+							<div class="ordername">
+								Fudge Brownies
+							</div>
+							<br>
+							<div class="orderitem">
+								<label>
+									Amount:
+										<select name="sidesbrownie">
+											<option value="12pcs">12 Pieces</option>
+											<option value="16pcs">16 Pieces</option>
+											<option value="24pcs">24 Pieces</option>
+										</select>
+								</label>
+								&nbsp;
+								<label><input type="checkbox" id="fudge" value="Fudge Brownies" onclick="addsweet3()">Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>CUSTOMER DETAILS</legend>
+					<div class="orderitem">
+						<div class="row">
+							<div class="columns">
+								<label>Customer name: <input type="text" id="name_input" onkeyup="nameinput()" required/></label>
+							</div>
+							<div class="columns">
+								<label>Mobile number: <input type="number" id="number_input" required/></label>
+							</div>
+							<div class="columns">
+								<label>E-mail address: <input type="email" id="email_input" onkeyup="emailinput()" required/></label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>DELIVERY INFORMATION</legend>
+					<div class="orderitem">
+						<div class="row">
+							<div class="columns">
+								<label> Delivery date: <input type="date" id="orderdate" required></label>
+							</div>
+							<div class="columns">
+								<label> Preferred delivery time: <input type="time" id="ordertime" required></label>
+								<button onclick="checktime()">Validate time</button>
+							</div>
+							<div class="columns">
+								<label> Delivery address: <textarea rows="1" cols="20" onkeyup="addressinput()" id="address_input" required>Type here..</textarea>
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field">
+					<legend>RECEIPT</legend>
+					<div class="receipt">
+						<div class="row">
+							<div class="columnsreceipt1">
+								<fieldset class="field">
+									<legend>DETAILS</legend>
+										<p>Customer name: <input type="text" id="name_inputted" readonly></p>
+										<p>Mobile number: <input type="number" id="number_inputted" readonly></p>
+										<p>E-mail address: <input type="email" id="email_inputted" readonly></p>
+										<p>Delivery date: <input type="date" id="receiptdate" readonly></p>
+										<p>Preferred delivery time: <input type="time" id="receipttime" readonly></p>
+										<p>Delivery address: <textarea rows="1" cols="20" id="address_inputted" readonly></textarea></p>
+								</fieldset>
+							</div>
+							<div class="columnsreceipt2">
+								<fieldset class="field">
+									<legend>CART</legend>
+										Added items:
+											<div class="row">
+												<div class="columncart">
+													<p id="basepizza"></p>
+													Pizza size: <input type="text" id="finalsize" readonly>
+													<p id="toppings"></p>
+													<p id="pizza1"></p>
+													<p id="pizza2"></p>
+													<p id="pizza3"></p>
+													<p id="pizza4"></p>
+													<p id="pizza5"></p>
+													<p id="pizza6"></p>
+													<p id="pizza7"></p>
+													<p id="pizza8"></p>
+													<p id="pizza9"></p>
+												</div>
+												<div class="columncart">
+													<p id="wings1"></p>
+													<p id="wings2"></p>
+													<p id="wings3"></p>
+													<p id="salad1"></p>
+													<p id="salad2"></p>
+													<p id="salad3"></p>
+													<p id="side1"></p>
+													<p id="side2"></p>
+													<p id="side3"></p>
+													<p id="sweet1"></p>
+													<p id="sweet2"></p>
+													<p id="sweet3"></p>
+												</div>
+											</div>
+								</fieldset>
+							</div>
+						</div>
+						<div class="buttonposition">
+							<button class="buttonform" type="reset">RESET INFORMATION</button>
+							&emsp;
+							<button class="buttonform" type="submit">PLACE YOUR ORDER</button>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		<div class="footbox"></div>
+		<div class="footboxborder"></div>
+		<div class="footcontent">
+			<p>CONNECT WITH US AT:</p>
+			<a href="https://www.facebook.com/miguel.pardinas.7?ref=bookmarks"><img style="width: 30px;" src="socialicons/facebook.jpeg" alt="Facebook"></a>
+			&emsp;
+			<a href="mailto:mspardinas@up.edu.ph"><img style="width: 30px;" src="socialicons/google.jpeg" alt="Google mail"></a>
+			<p><i>1-800-HOTLINECAT</i></p>
+		</div>
+		<div class="copyright">
+			Copyright ©2018 Pizza Cat's Planet. All Rights Reserved.
+		</div>
+		<div class="suggest">
+			<label> COMMENTS & SUGGESTIONS: <br><br>
+				<textarea rows="8" cols="75" required style="color: white; background-color: transparent;">TYPE HERE...</textarea>
+			</label>
+			<br><br>
+			<button class="footerbutton" type="submit">SUBMIT</button>
+		</div>
+	</form>
+	</body>
+</html>

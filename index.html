@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pizza Cat's Planet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		.topbox {
+			position: fixed;
+			height: 130px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: black;
+			z-index: 5;
+		}
+		.topboxbottomborder {
+			position: fixed;
+			height: 132px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: #B6422C;
+			z-index: 4;
+		}
+		.navbar {
+			float: right;
+			right: 30px;
+			top: 70px;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			overflow: hidden;		
+			background-color: black;
+			position: fixed;
+			width: 100%;
+			text-align: center;
+			z-index: 6;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 21px;
+		}
+		.navbar li {
+			display: inline;
+		} 
+		.navbar a {
+    		display: inline-block;
+   			color: white;
+   			padding: 12px 35px;
+   			text-decoration: none;
+   			float: right;
+   		}
+		.current {
+			border-bottom: 2px solid white;
+		}
+		li a:hover {
+			border-bottom: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: #762423;
+		}
+		.hometext {
+			position: absolute;
+			width: 99%;
+			text-align: center;
+			color: white;
+			font-family: Palatino Linotype;
+			font-size: 60px;
+			z-index: 5px;
+			top: 410px;
+		}
+		.homequote {
+			font-size: 20px;
+		}
+		.footbox {
+			position: absolute;
+			height: 320px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 1152px;
+			bottom: 0;
+			background-color: black;
+			z-index: 1;
+		}
+		.footboxborder {
+			position: absolute;
+			height: 322px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 1150px;
+			bottom: 0;
+			background-color: #B6422C;
+			z-index: -1;
+		}
+		.footcontent {
+			position: absolute;
+			color: white;
+			top: 1200px;
+			left: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		.copyright {
+			position: absolute;
+			color: #808080;
+			top: 1430px;
+			text-align: center;
+			font-family: Arial, sans-serif;
+			font-size: 13px;
+			z-index: 3;
+			width: 99%;
+		}
+		.suggest {
+			position: absolute;
+			color: white;
+			background: transparent;
+			top: 1200px;
+			right: 310px;
+			font-family: Bookman, Arial, sans-serif;
+			font-size: 15px;
+			z-index: 3;
+		}
+		button {
+			position: absolute;
+			right: 4px;
+			border-radius: 2px;
+			color: white;
+			background-color: black;
+			padding: 8px 10px;
+			border-color: #B6422C;
+		}
+		</style>
+	</head>
+	<body>
+		<img style="left: 40px; top: 15px; z-index: 10; position: fixed; width: 13%; color: white;"src="logo/logo.jpeg" alt="PIZZA CAT'S PLANET">
+		<ul align="right" class="navbar">
+			<li><a href="manager.html">ABOUT THE MEOWNAGER</a></li>
+			<li><a href="order.html">ORDER NOW</a></li>
+			<li><a href="menu.html">MENU</a></li>
+			<li><a href="home.html" class="current">HOME</a></li>
+		</ul>
+		<div class="topbox"></div>
+		<div class="topboxbottomborder"></div>
+		<img style="position: absolute; left: 0; top: 50px; max-width: 100%; z-index: -3;" src="backdrops/spacecat.jpg" alt="Space Cats">
+		<div class="hometext">
+			" take a bite of the stars...<br>
+			with pizza that's<br>
+			out of this world "
+			<br>
+			<br>
+			<div class="homequote">
+				- Neil W. Meowstrong
+			</div>
+		</div>
+		<div class="footbox"></div>
+		<div class="footboxborder"></div>
+		<div class="footcontent">
+			<p>CONNECT WITH US AT:</p>
+			<a href="https://www.facebook.com/miguel.pardinas.7?ref=bookmarks"><img style="width: 30px;" src="socialicons/facebook.jpeg" alt="Facebook"></a>
+			&emsp;
+			<a href="mailto:mspardinas@up.edu.ph"><img style="width: 30px;" src="socialicons/google.jpeg" alt="Google mail"></a>
+			<p><i>1-800-HOTLINECAT</i></p>
+		</div>
+		<div class="copyright">
+			Copyright ©2018 Pizza Cat's Planet. All Rights Reserved.
+		</div>
+		<div class="suggest">
+			<label> COMMENTS & SUGGESTIONS: <br><br>
+				<textarea rows="8" cols="75" required style="color: white; background-color: transparent;">TYPE HERE...</textarea>
+			</label>
+			<br><br>
+			<button type="submit">SUBMIT</button>
+		</div>
+	</body>
+</html>
